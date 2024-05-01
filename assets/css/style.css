@@ -1,23 +1,7 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
 @import url(./style.scss);
-/**
- * copyright 2022 @codewithsadee
- */
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
-  /**
-   * colors
-   */
-
-  /* gradient */
-
+  /*Gradient Colors*/
   --bg-gradient-onyx: linear-gradient(
     to bottom right,
     hsl(240, 1%, 25%) 3%,
@@ -50,30 +34,23 @@
     hsl(45, 100%, 72%),
     hsl(35, 100%, 68%)
   );
-
-  /* solid */
-
-  --jet: hsl(0, 0%, 22%);
+  /* Solid Colors*/
+  --jet: hsl(0, 0%, 34%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
+  --eerie-black-3: hsl(203, 65%, 8%);
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
+  --orange-yellow-crayola: #ffdb70;
   --vegas-gold: hsl(45, 54%, 58%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
-
-  /**
-   * typography
-   */
-
-  /* font-family */
+  /*Font Family*/
   --ff-poppins: "Poppins", sans-serif;
-
-  /* font-size */
+  /*Font Size*/
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -82,35 +59,27 @@
   --fs-6: 14px;
   --fs-7: 13px;
   --fs-8: 11px;
-
-  /* font-weight */
+  /*Font Weight*/
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-
-  /**
-   * shadow
-   */
-
+  /* Shadow */
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-
-  /**
-   * transition
-   */
-
-  --transition-1: 0.25s ease;
+  /* Transitions */
+  --transition-1: 0.85s ease;
   --transition-2: 0.5s ease-in-out;
 }
 
 /*-----------------------------------*\
-  #RESET
+  #Base Styling Used throughout
 \*-----------------------------------*/
 
+/* Universal */
 *,
 *::before,
 *::after {
@@ -119,14 +88,17 @@
   box-sizing: border-box;
 }
 
+/* Anchor Tags */
 a {
   text-decoration: none;
 }
 
+/* List Tags */
 li {
   list-style: none;
 }
 
+/*  */
 img,
 ion-icon,
 a,
@@ -136,6 +108,7 @@ span {
   display: block;
 }
 
+/* Buttons used such as "Send Email" etc. */
 button {
   font: inherit;
   background: none;
@@ -144,6 +117,7 @@ button {
   cursor: pointer;
 }
 
+/* I/P and Text Area used in Contact Form Section */
 input,
 textarea {
   display: block;
@@ -152,44 +126,47 @@ textarea {
   font: inherit;
 }
 
+/* Targets selected text on the webpage */
 ::selection {
   background: var(--orange-yellow-crayola);
   color: var(--smoky-black);
 }
 
+/* When element is in focus- "Show Contacts" etc. */
 :focus {
   outline-color: var(--orange-yellow-crayola);
 }
 
+/* Entire HTML and Body */
 html {
   font-family: var(--ff-poppins);
 }
-
 body {
   background: var(--smoky-black);
 }
 
-/*-----------------------------------*\
-  #REUSED STYLE
-\*-----------------------------------*/
+/* Reused Styling Throughout Project */
 
+/* Sidebar and Article Tag */
 .sidebar,
 article {
-  background: var(--eerie-black-2);
-  border: 1px solid var(--jet);
+  background: #161616;
+  border: 3px solid;
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
 }
 
+/* Line Separator */
 .separator {
   width: 100%;
   height: 1px;
   background: var(--jet);
-  margin: 16px 0;
+  /* margin: 16px 0; */
 }
 
+/* Icon Box */
 .icon-box {
   position: relative;
   background: var(--border-gradient-onyx);
@@ -204,7 +181,6 @@ article {
   box-shadow: var(--shadow-1);
   z-index: 1;
 }
-
 .icon-box::before {
   content: "";
   position: absolute;
@@ -213,20 +189,18 @@ article {
   border-radius: inherit;
   z-index: -1;
 }
-
 .icon-box ion-icon {
   --ionicon-stroke-width: 35px;
 }
 
+/* Article Tag */
 article {
   display: none;
 }
-
 article.active {
   display: block;
   animation: fade 0.5s ease backwards;
 }
-
 @keyframes fade {
   0% {
     opacity: 0;
@@ -236,6 +210,7 @@ article.active {
   }
 }
 
+/* Heading Tags */
 .h2,
 .h3,
 .h4,
@@ -261,6 +236,7 @@ article.active {
   font-weight: var(--fw-500);
 }
 
+/* Article Titles- About Me, Experience, Blog etc. */
 .article-title {
   position: relative;
   padding-bottom: 7px;
@@ -277,59 +253,54 @@ article.active {
   border-radius: 3px;
 }
 
-.has-scrollbar::-webkit-scrollbar {
-  width: 5px; /* for vertical scrollbar */
-  height: 5px; /* for horizontal scrollbar */
-}
+/* I don't think this section has been used anywhere- IT CAN BE REMOVED */
 
-.has-scrollbar::-webkit-scrollbar-track {
-  background: var(--onyx);
-  border-radius: 5px;
-}
+/* .has-scrollbar::-webkit-scrollbar { */
+/* width: 5px; for vertical scrollbar */
+/* height: 5px; for horizontal scrollbar */
+/* } */
 
-.has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--orange-yellow-crayola);
-  border-radius: 5px;
-}
+/* .has-scrollbar::-webkit-scrollbar-track {
+      background: var(--onyx);
+      border-radius: 5px;
+    } */
 
-.has-scrollbar::-webkit-scrollbar-button {
-  width: 20px;
-}
+/* .has-scrollbar::-webkit-scrollbar-thumb {
+      background: var(--orange-yellow-crayola);
+      border-radius: 5px;
+    } */
 
-.content-card {
-  position: relative;
-  background: var(--border-gradient-onyx);
-  padding: 15px;
-  padding-top: 45px;
-  border-radius: 14px;
-  box-shadow: var(--shadow-2);
-  cursor: pointer;
-  z-index: 1;
-}
+/* .has-scrollbar::-webkit-scrollbar-button { width: 20px; }
 
-.content-card::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  background: var(--bg-gradient-jet);
-  border-radius: inherit;
-  z-index: -1;
-}
+    .content-card {
+      position: relative;
+      background: var(--border-gradient-onyx);
+      padding: 15px;
+      padding-top: 45px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-2);
+      cursor: pointer;
+      z-index: 1;
+    }
 
-/*-----------------------------------*\
-  #MAIN
-\*-----------------------------------*/
+    .content-card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      background: var(--bg-gradient-jet);
+      border-radius: inherit;
+      z-index: -1;
+    } */
 
+/* Main (Change BG Color to White to understand how much area it covers!)*/
 main {
   margin: 15px 12px;
-  margin-bottom: 7500px;
+  margin-bottom: 75px;
   min-width: 259px;
+  /* background-color: white; */
 }
 
-/*-----------------------------------*\
-  #SIDEBAR
-\*-----------------------------------*/
-
+/* Sidebar */
 .sidebar {
   margin-bottom: 15px;
   max-height: 112px;
@@ -349,19 +320,27 @@ main {
   gap: 15px;
 }
 
+/* My Picture */
 .avatar-box {
-  background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  /* clip-path: inset(20px 0 0 0 round 30px); */
+  transform: translateY(-20px);
+  border: 3px solid var(--jet);
+  width: 100%;
+  height: auto;
+  /* margin-top: 5vh; */
 }
 
+/* Name */
 .info-content .name {
   color: var(--white-2);
   font-size: var(--fs-3);
   font-weight: var(--fw-500);
   letter-spacing: -0.25px;
+  margin-top: -20px;
   margin-bottom: 10px;
 }
 
+/* Title and resume button */
 .title {
   color: var(--white-1);
   background: var(--onyx);
@@ -372,6 +351,7 @@ main {
   border-radius: 8px;
 }
 
+/* Show Contacts Button (Viewable in Responsive!) */
 .info_more-btn {
   position: absolute;
   top: -15px;
@@ -396,11 +376,12 @@ main {
   z-index: -1;
 }
 
+/* Border of the button */
 .info_more-btn:hover,
 .info_more-btn:focus {
-  background: var(--bg-gradient-yellow-1);
+  background: white;
 }
-
+/* Inside of the button */
 .info_more-btn:hover::before,
 .info_more-btn:focus::before {
   background: var(--bg-gradient-yellow-2);
@@ -410,51 +391,7 @@ main {
   display: none;
 }
 
-.sidebar-info_more {
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition-2);
-}
-
-.sidebar.active .sidebar-info_more {
-  opacity: 1;
-  visibility: visible;
-}
-
-.contacts-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-.contact-item {
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.contact-info {
-  max-width: calc(100% - 46px);
-  width: calc(100% - 46px);
-}
-
-.contact-title {
-  color: var(--light-gray-70);
-  font-size: var(--fs-8);
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-
-.contact-info :is(.contact-link, time, address) {
-  color: var(--white-2);
-  font-size: var(--fs-7);
-}
-
-.contact-info address {
-  font-style: normal;
-}
-
+/* Social List (Icons) */
 .social-list {
   display: flex;
   justify-content: flex-start;
@@ -473,10 +410,46 @@ main {
   color: var(--light-gray);
 }
 
-/*-----------------------------------*\
-  #NAVBAR
-\*-----------------------------------*/
+/* More Info Section (Email, Location) */
+.sidebar-info_more {
+  transition: var(--transition-2);
+}
 
+.contacts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.contact-item {
+  /* min-width: 100%; */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-info {
+  max-width: calc(100% - 46px);
+  width: calc(100% - 46px);
+}
+
+.contact-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact-info :is(.contact-link, address) {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+}
+
+.contact-info address {
+  font-style: normal;
+}
+
+/* NavBar */
 .navbar {
   position: fixed;
   bottom: 0;
@@ -1029,9 +1002,9 @@ main {
 .project-img {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 200px;
   border-radius: 16px;
-  object-fit: cover;
+  overflow: hidden;
   margin-bottom: 15px;
 }
 
@@ -1116,7 +1089,7 @@ main {
 }
 
 .blog-posts-list {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: 1fr;
   gap: 20px;
 }
@@ -1334,7 +1307,7 @@ textarea.form-input::-webkit-resizer {
  * responsive larger than 450px screen
  */
 
-@media (min-width: 450px) {
+@media (min-width: 150px) {
   /**
    * client
    */
@@ -1357,7 +1330,7 @@ textarea.form-input::-webkit-resizer {
  * responsive larger than 580px screen
  */
 
-@media (min-width: 580px) {
+@media (min-width: 180px) {
   /**
    * CUSTOM PROPERTY
    */
@@ -1409,7 +1382,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   main {
-    margin-top: 15px;
+    /* margin-top: 60px; */
     margin-bottom: 100px;
   }
 
@@ -1418,7 +1391,7 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar {
-    max-height: 180px;
+    max-height: 280px;
     margin-bottom: 30px;
   }
 
@@ -1426,17 +1399,12 @@ textarea.form-input::-webkit-resizer {
     max-height: 584px;
   }
 
-  .sidebar-info {
-    gap: 25px;
-  }
+  /* .sidebar-info { gap: 25px; } */
 
   .avatar-box {
     border-radius: 30px;
-    overflow: hidden;
-  }
-
-  .avatar-box img {
-    width: 120px;
+    width: 18vh;
+    /* margin-top: 20px; */
   }
 
   .info-content .name {
@@ -1463,7 +1431,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .separator {
-    margin: 10px 0;
+    margin: 20px 0;
   }
 
   .contacts-list {
@@ -1471,8 +1439,8 @@ textarea.form-input::-webkit-resizer {
   }
 
   .contact-info {
-    max-width: calc(100% - 4px);
-    width: calc(100% - 4px);
+    max-width: calc(100% - 64px);
+    width: calc(100% - 64px);
   }
 
   /**
@@ -1488,7 +1456,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   .navbar-link {
-    --fs-8: 14px;
+    --fs-8: 1.3vh;
   }
 
   /**
@@ -1511,11 +1479,12 @@ textarea.form-input::-webkit-resizer {
     align-items: flex-start;
     gap: 18px;
     padding: 30px;
+    margin-bottom: 2vh;
   }
 
   .service-icon-box {
     margin-bottom: 0;
-    margin-top: 5px;
+    /* margin-top: 5px; */
   }
 
   .service-content-box {
@@ -1968,10 +1937,12 @@ textarea.form-input::-webkit-resizer {
    */
 
   .sidebar {
-    top: 60px;
+    position: sticky;
+    /* top: 60px; */
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
+    /* padding-top: 60px; */
     z-index: 1;
   }
 
@@ -1979,7 +1950,7 @@ textarea.form-input::-webkit-resizer {
     flex-direction: column;
   }
 
-  .avatar-box img {
+  .avatar-box {
     width: 250px;
     height: 250px;
   }
@@ -2031,7 +2002,7 @@ textarea.form-input::-webkit-resizer {
 	 */
 
   .timeline-text {
-    max-width: 800px;
+    max-width: 700px;
   }
 }
 

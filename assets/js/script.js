@@ -194,22 +194,22 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 function sendEmail() {
-  var name = document.getElementById("personName").value;
-  var email = document.getElementById("personEmail").value;
-  var msg = document.getElementById("personMessage").value;
-
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "ankitbasrur.github@gmail.com",
-    Password: "1C7E580CF7F2ED5EE009B7F3B96997C011EC",
-    To: "ankitbasrur.github@gmail.com",
-    From: "ankitbasrur.github@gmail.com",
-    Subject: "Message from " + name + " at: " + email,
-    Body: msg,
-  }).then(function (message) {
-    document.getElementById("personName").value = "";
-    document.getElementById("personEmail").value = "";
-    document.getElementById("personMessage").value = "";
-    alert("mail sent successfully" + message);
-  });
+  emailjs.init("AJgjMFFZqCzVzahwW");
+  emailjs
+    .send("service_5kyf725", "template_p57g3io", {
+      from_name: document.getElementById("personName").value,
+      from_email: document.getElementById("personEmail").value,
+      message: document.getElementById("personMessage").value,
+    })
+    .then(function (response) {
+      console.log("Sent successfully:", response);
+      document.getElementById("personName").value = "";
+      document.getElementById("personEmail").value = "";
+      document.getElementById("personMessage").value = "";
+      alert("Mail sent successfully");
+    })
+    .catch(function (error) {
+      console.error("Failed to send mail:", error);
+      alert("Failed to send mail");
+    });
 }

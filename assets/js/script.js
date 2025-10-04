@@ -196,7 +196,7 @@ for (i = 0; i < acc.length; i++) {
 function sendEmail() {
   emailjs.init("AJgjMFFZqCzVzahwW");
   emailjs
-    .send("service_5kyf725", "template_p57g3io", {
+    .send("service_erhc48h", "template_p57g3io", {
       from_name: document.getElementById("personName").value,
       from_email: document.getElementById("personEmail").value,
       message: document.getElementById("personMessage").value,
